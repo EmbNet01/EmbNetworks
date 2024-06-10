@@ -31,7 +31,7 @@ The results are saved in the folder embedNEW.
 ### Experiments
 To reproduce the experiments in the paper, we provide the python script main.py. It takes 2 parameters:
 - net the name of the network 
-- task the name of the task {"cla","regr","viz","synt"}
+- task the name of the task {"cla","regr","viz"}
   
 The syntax for the execution is the following:
 ```
@@ -42,7 +42,6 @@ Not all the possible combinations are available. We present as follow the altern
 1- python main.py net cla        
 2- python main.py net regr       
 3- python main.py Barbell viz
-4- python main.py synt synt
 
 ```
 Commands 1 and 2 compute the classification and regression task for any network in the set {"BrazilAir", "EUAir", "USAir", "actor", "film"}.
@@ -52,7 +51,5 @@ The following command computes the regression task for the network BrazilAir.
 python main.py BrazilAir regr
 ```
 The command 3 computes the visualization task for the Barbell networks. It is not available for another network.
-
-The command 4 computes the classification for generated synthetic networks.
 
 All the results are stored in the results folder.
