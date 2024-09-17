@@ -11,20 +11,20 @@ All the results are generated in a virtual environment with the following specif
 
 ### Iterative eps BE algorithm
 The algorithm presented in the paper is provided as an executable .jar file called epsBE.jar. It requires 5 parameters in the following order:
-- N the number of nodes in the networks
 - net the name of the network {"BrazilAir", "EUAir", "USAir", "actor", "film","Barbell"}
+- N the number of nodes in the networks
 - eps_0 the initial epsilon
 - D the maximum epsilon considered Delta
 - d the step delta
 
 The syntax for the execution is the following:
 ```
-java -jar epsBE.jar N net eps_0 D d
+java -jar epsBE.jar net N eps_0 D d
 ```
 ##### Example
 The following command computes the embedding for the network BrazilAir composed of 131 nodes starting from eps equal to 0 up to 3 with a step equal to 1
 ```
-java -jar epsBE.jar 131 BrazilAir 0 3 1
+java -jar epsBE.jar BrazilAir 131  0 3 1
 ```
 The results are saved in the folder embedNEW.
 
