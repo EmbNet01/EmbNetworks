@@ -299,10 +299,7 @@ public class Valmari {
         double step = Double.parseDouble(args[4]);
         
         boolean prePart=false;
-        String pname = "null";
-        if(!pname.equals("null")) {
-        	prePart=true;
-        }
+
 
 
         List<List<Integer>> toS = fillST("datasets/"+nname+".edgelist",N);
