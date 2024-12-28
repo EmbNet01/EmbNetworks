@@ -73,3 +73,6 @@ python main.py BrazilAir regr
 The command 3 computes the visualization task for the Barbell networks. It is not available for another network.
 
 All the results are stored in the results folder.
+
+##### Contacts
+For any problem, you can send an email to giuseppesquillace92@gmail.com
