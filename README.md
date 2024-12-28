@@ -10,27 +10,46 @@ All the results are generated in a virtual environment with the following specif
 - matplotlib = 3.7.1
 
 ### Iterative eps BE algorithm
-The algorithm presented in the paper is provided as an executable .jar file called epsBE.jar. It requires 5 parameters in the following order:
-- net the name of the network {"BrazilAir", "EUAir", "USAir", "actor", "film","Barbell"}
+The algorithm presented in the paper is provided as an executable .jar file called epsBE.jar. It requires the following 6 parameters and produce an eps-BE partition:
+- netPat path to the input network
 - N the number of nodes in the networks
 - eps_0 the initial epsilon
 - D the maximum epsilon considered Delta
 - d the step delta
-
+- partitionPath path to the output partition file
 The syntax for the execution is the following:
 ```
-java -jar epsBE.jar net N eps_0 D d
+java -jar epsBE.jar netPath N eps_0 D d partitionPath
 ```
 ##### Example
 The following command computes the embedding for the network BrazilAir composed of 131 nodes starting from eps equal to 0 up to 3 with a step equal to 1
 ```
-java -jar epsBE.jar BrazilAir 131  0 3 1
+java -jar epsBE.jar ./datasets/BrazilAir.edgelist 131  0 3 1 ./embed/BrazilAirBE
 ```
-The results are saved in the folder embedNEW.
+##### Networks
+
+The methods currently support undirected binary networks, which are represented using .edgelist files. These files contain a list of edges in the network. For example, if there is an edge between nodes 1 and 2, it can be specified as either 1 2 or 2 1 in the file. Duplicate entries for the same edge are not allowed.
+
+##### Embedding
+To compute the embedding matrix you can use the embedNet.py script with the following parameters:
+- netPat path to the input network
+- N the number of nodes in the networks
+- partitionPath path to the partition file
+- embedPath path to the output embed file
+
+The syntax for the execution is the following:
+```
+python embedNet.py netPath N partitionPath embedPath
+```
+##### Example
+The following command computes the embedding for the network BrazilAir composed of 131 nodes with the partition previously computed
+```
+python embedNet.py ./datasets/BrazilAir.edgelist 131 ./embed/BrazilAirBE ./BrazilAirEMB
+```
 
 ### Experiments
 To reproduce the experiments in the paper, we provide the python script main.py. It takes 2 parameters:
-- net the name of the network 
+- net the name of the network {"BrazilAir", "EUAir", "USAir", "actor", "film"}
 - task the name of the task {"cla","regr","viz"}
   
 The syntax for the execution is the following:
