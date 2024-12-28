@@ -1,5 +1,5 @@
 # BE-embedding
-Codes for the experiments carried out in the paper "Efficient Network Embedding by Approximate Equitable Partitions" https://arxiv.org/abs/2409.10160
+Codes for the experiments carried out in the paper "Efficient Network Embedding by Approximate Equitable Partitions" (Accepted at ICDM 2024) https://arxiv.org/abs/2409.10160
 
 ### Environment
 All the results are generated in a virtual environment with the following specifications:
