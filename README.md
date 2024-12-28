@@ -17,6 +17,7 @@ The algorithm presented in the paper is provided as an executable .jar file call
 - D the maximum epsilon considered Delta
 - d the step delta
 - partitionPath path to the output partition file
+
 The syntax for the execution is the following:
 ```
 java -jar epsBE.jar netPath N eps_0 D d partitionPath
@@ -28,7 +29,7 @@ java -jar epsBE.jar ./datasets/BrazilAir.edgelist 131  0 3 1 ./embed/BrazilAirBE
 ```
 ##### Networks
 
-The methods currently support undirected binary networks, which are represented using .edgelist files. These files contain a list of edges in the network. For example, if there is an edge between nodes 1 and 2, it can be specified as either 1 2 or 2 1 in the file. Duplicate entries for the same edge are not allowed.
+The methods currently support undirected binary networks, which are represented using .edgelist files. These files contain a list of edges in the network. For example, if there is an edge between nodes 3 and 4, it can be specified as either 3 4 or 4 3 in the file. The .edgelist files do not contains duplicate entries and the nodes id start from 0.
 
 ##### Embedding
 To compute the embedding matrix you can use the embedNet.py script with the following parameters:
