@@ -29,7 +29,7 @@ java -jar epsBE.jar ./datasets/BrazilAir.edgelist 131  0 3 1 ./embed/BrazilAirBE
 ```
 ##### Networks
 
-The methods currently support undirected binary networks, which are represented using .edgelist files. These files contain a list of edges in the network. For example, if there is an edge between nodes 3 and 4, it can be specified as either 3 4 or 4 3 in the file. The .edgelist files do not contains duplicate entries and the nodes id start from 0.
+The method currently supports undirected binary networks represented using .edgelist files. These files list the edges in the network. For instance, an edge between nodes 3 and 4 can be specified as either 3 4 or 4 3, but not both. The .edgelist files do not contain duplicate entries, and node IDs start from 0.
 
 ##### Embedding
 To compute the embedding matrix you can use the embedNet.py script with the following parameters:
