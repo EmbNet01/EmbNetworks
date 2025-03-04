@@ -18,9 +18,9 @@ The algorithm presented in the paper is provided as an executable .jar file call
 - eps_0 the initial epsilon
 - D the maximum epsilon considered Delta
 - d the step delta
+- partitionPath path to the output partition file
 - directed bool indicating if the network is directed
 - weighted bool indicating if the network is weighted
-- partitionPath path to the output partition file
 
 The syntax for the execution is the following:
 ```
@@ -29,7 +29,7 @@ java -jar epsBE.jar netPath N eps_0 D d directed weighted partitionPath
 ##### Example
 The following command computes the embedding for the network BrazilAir composed of 131 nodes starting from eps equal to 0 up to 3 with a step equal to 1
 ```
-java -jar epsBE.jar ./datasets/BrazilAir.edgelist 131  0 3 1 False False ./embed/BrazilAirBE
+java -jar epsBE.jar ./datasets/BrazilAir.edgelist 131  0 3 1 false false ./embed/BrazilAirBE
 ```
 For directed network it is necessary to compute a partition for the original network and another for the transpose.
 ##### Networks
