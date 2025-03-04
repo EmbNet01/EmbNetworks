@@ -1,5 +1,6 @@
 # BE-embedding
 Code for the experiments carried out in the paper "Efficient Network Embedding by Approximate Equitable Partitions" (Accepted at ICDM 2024) https://arxiv.org/abs/2409.10160
+
 UPDATE: Added extension for weighted and directed networks.
 
 ### Environment
@@ -30,7 +31,7 @@ The following command computes the embedding for the network BrazilAir composed 
 ```
 java -jar epsBE.jar ./datasets/BrazilAir.edgelist 131  0 3 1 False False ./embed/BrazilAirBE
 ```
-For directed network it is necessary to compute a partition for the original network and another on the transpose of this network.
+For directed network it is necessary to compute a partition for the original network and another for the transpose.
 ##### Networks
 
 The method currently supports undirected/directed unweighted/weighted networks represented using .edgelist files. These files list the edges in the network. For instance, an edge from node 3 to node 4 with weight 5 can be specified as follows 
@@ -91,7 +92,7 @@ We present as follow the alternatives:
 3- python main.py Barbell viz
 
 ```
-Commands 1 and 2 compute the classification and regression task for any network in the set {"BrazilAir", "EUAir", "USAir", "actor", "film"}.
+Commands 1 and 2 compute the classification and regression task for netowrk net.
 ##### Example
 The following command computes the regression task for the network BrazilAir.
 ```
