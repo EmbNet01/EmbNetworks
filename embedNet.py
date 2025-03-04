@@ -44,8 +44,8 @@ if len(sys.argv) < 8 or len(sys.argv)>8:
 # Access arguments
 sourcePath = sys.argv[1]
 N = int(sys.argv[2])
-directed = strtobool(sys.argv[3])
-weighted = strtobool(sys.argv[4])
+directed = bool(strtobool(sys.argv[3]))
+weighted = bool(strtobool(sys.argv[4]))
 partPath = sys.argv[5]
 partPathT = sys.argv[6]
 destPath = sys.argv[7]
