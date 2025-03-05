@@ -446,7 +446,7 @@ elif(net=="wekaD"):
     just=True
 
 if(name not in syntheticD and name not in syntheticDW and name not in syntheticW):
-    M = np.zeros((N,N),dtype=int);
+    M = np.zeros((N,N));
     fid = open(PATH,"r");
     line = fid.readline();
     while(line[0]=="%"):
@@ -796,7 +796,7 @@ if(sys.argv[2]=="cla" and (name in syntheticD or name in syntheticDW)):
             fLabel.close()
 
 
-            M = np.zeros((N,N),dtype=int);
+            M = np.zeros((N,N));
             if("W" in name):
                 fid = open("synt/"+"syntcirclesample"+str(k)+"DWpert"+str(pert),"r")
             else:    
@@ -951,7 +951,7 @@ if(sys.argv[2]=="cla" and (name in syntheticW)):
             fLabel.close()
 
 
-            M = np.zeros((N,N),dtype=int);
+            M = np.zeros((N,N));
             fid = open("synt/"+"synt"+"circlesample"+str(k)+"Wpert"+str(pert)+"","r");
             line = fid.readline();
             while(line[0]=="%"):

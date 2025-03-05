@@ -1,32 +1,21 @@
 import numpy as np
+import time
 import sys
 import copy
 from distutils.util import strtobool
 
 
 
-def computePart(array,N,pr):
-    partition = []
-    for i in range(N):
-        block=[]
-        for j in range(N):
-            if(array[j]==i+1):
-                block.append(j+1)
-        if(block!=[]):
-            partition.append(block)
-    return partition
-
-
 def reduceModelColumn(A,partition):
     dim = len(partition)
-    res = np.zeros((len(A),dim))
-    for j in range(len(A)):
-        index = 0
-        for elem in partition:
-            for el in elem:
-                res[j][index] = res[j][index] +  A[j][el-1]
-            index=index+1
+    res = np.zeros((N,dim))
+    index = 0
+    for elem in partition:
+        for el in elem:
+            res[:,index] = res[:,index] +  A[:,el-1]
+        index=index+1
     return res
+
 
 
 if len(sys.argv) < 8 or len(sys.argv)>8:
@@ -50,7 +39,7 @@ partPath = sys.argv[5]
 partPathT = sys.argv[6]
 destPath = sys.argv[7]
 
-M = np.zeros((N,N),dtype=int);
+M = np.zeros((N,N));
 fid = open(sourcePath,"r");
 line = fid.readline();
 while(line[0]=="%"):
@@ -71,8 +60,6 @@ while line!="":
 
 fid.close();
 
-print(weighted)
-print(M)
 
 f = open(partPath,"r")
 Mcross = copy.deepcopy(M)
@@ -87,15 +74,17 @@ partitionAll = []
 
 ppart = np.zeros(N,dtype=int)
 index=1
+Peta = []
 for elem in line:
     elem = elem.split(" ")
     elem = elem[1:len(elem)-1]
+    block = []
     for el in elem:
         inde = int(el.replace("x",""))
-        ppart[inde-1] = index;
+        block.append(inde)
+    if(block!=[]):
+        Peta.append(block)
     index=index+1
-
-Peta =  computePart(ppart,N,0)
 redModelA= reduceModelColumn(Mcross,Peta)
 
 if(directed == True):
@@ -111,18 +100,17 @@ if(directed == True):
     perc = ((N-red)/N)
     partitionAll = []
 
-    ppart = np.zeros(N,dtype=int)
-    index=1
+    Peta = []
     for elem in line:
         elem = elem.split(" ")
         elem = elem[1:len(elem)-1]
+        block = []
         for el in elem:
             inde = int(el.replace("x",""))
-            ppart[inde-1] = index;
+            block.append(inde)
+        if(block!=[]):
+            Peta.append(block)
         index=index+1
-
-    Peta =  computePart(ppart,N,0)
     redModelA= np.concatenate((redModelA, reduceModelColumn(Mcross,Peta)), axis=-1)
 
-
-np.savetxt(destPath, redModelA, delimiter=" ", fmt='%d')
+np.savetxt(destPath, redModelA, delimiter=" ", fmt='%f')    
