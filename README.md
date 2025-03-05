@@ -29,7 +29,7 @@ java -jar epsBE.jar netPath N eps_0 D d partitionPath directed weighted
 ##### Example
 The following command computes the embedding for the network BrazilAir composed of 131 nodes starting from eps equal to 0 up to 3 with a step equal to 1
 ```
-java -jar epsBE.jar ./datasets/BrazilAir.edgelist 131  0 3 1 ./embed/BrazilAirBE false false
+java -jar epsBE.jar ./datasets/BrazilAir.edgelist 131 0 3 1 ./embed/BrazilAirBE false false
 ```
 For directed network it is necessary to compute a partition for the original network and another for the transpose.
 ##### Networks
