@@ -26,12 +26,16 @@ The syntax for the execution is the following:
 ```
 java -jar epsBE.jar netPath N eps_0 D d partitionPath directed weighted
 ```
+For directed network it is necessary to compute a partition for the original network and another for the transpose.
+```
+java -jar epsBE.jar netPathT N eps_0 D d partitionPath directed weighted
+```
+netPath and netPath are respectively the original network and the traspose specified as edgelist files.
 ##### Example
 The following command computes the embedding for the network BrazilAir composed of 131 nodes starting from eps equal to 0 up to 3 with a step equal to 1
 ```
 java -jar epsBE.jar ./datasets/BrazilAir.edgelist 131 0 3 1 ./embed/BrazilAirBE false false
 ```
-For directed network it is necessary to compute a partition for the original network and another for the transpose.
 ##### Networks
 
 The method currently supports undirected/directed unweighted/weighted networks represented using .edgelist files. These files list the edges in the network. For instance, an edge from node 3 to node 4 with weight 5 can be specified as follows 
