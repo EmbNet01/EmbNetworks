@@ -26,11 +26,11 @@ The syntax for the execution is the following:
 ```
 java -jar epsBE.jar netPath N eps_0 D d partitionPath directed weighted
 ```
-For directed network it is necessary to compute a partition for the original network and another for the transpose.
+For directed network it is necessary to compute another partition for the transpose of the original network.
 ```
 java -jar epsBE.jar netPathT N eps_0 D d partitionPath directed weighted
 ```
-netPath and netPath are respectively the original network and the traspose specified as edgelist files.
+netPath and netPathT are respectively the original network and the traspose specified as edgelist files.
 ##### Example
 The following command computes the embedding for the network BrazilAir composed of 131 nodes starting from eps equal to 0 up to 3 with a step equal to 1
 ```
