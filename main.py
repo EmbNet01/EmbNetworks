@@ -769,7 +769,7 @@ if(sys.argv[2]=="regr"):
 
 if(sys.argv[2]=="cla" and (name in syntheticD or name in syntheticDW)):
         
-        typ = sys.argv[3]    
+        typ = net    
         fclass = open("results/"+typ+"Classification.csv","w")
         BDEtotalscore = 0
         DRNEtotalscore = 0
@@ -777,11 +777,11 @@ if(sys.argv[2]=="cla" and (name in syntheticD or name in syntheticDW)):
         N2Btotalscore = 0
         EMBtotalscore = 0
 
-        typ = sys.argv[3]
+        typ = net
         if("W" in name):
-            pert = int(sys.argv[3].replace("syntDW",""))   
+            pert = int(net.replace("syntDW",""))   
         else:
-            pert = int(sys.argv[3].replace("syntD",""))   
+            pert = int(net.replace("syntD",""))   
 
         for k in range(20):
             print("Instance "+str(k))
@@ -929,8 +929,8 @@ if(sys.argv[2]=="cla" and (name in syntheticD or name in syntheticDW)):
 
 if(sys.argv[2]=="cla" and (name in syntheticW)):
         
-        typ = sys.argv[3]
-        pert = int(sys.argv[3].replace("syntW",""))    
+        typ = net
+        pert = int(net.replace("syntW",""))    
         fclass = open("results/synt"+"W"+str(pert)+"Classification.csv","w")
         BDEtotalscore = 0
         LTtotalscore = 0
