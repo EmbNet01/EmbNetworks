@@ -6,7 +6,7 @@ Code for the experiments carried out in the papers:
 UPDATES: 
 
 - Added extension for weighted and directed networks. 
-- Added Notebook Jupiter for computing $\varepsilon$-BE embeddings.
+- Added Jupyter notebook for computing $\varepsilon$-BE embeddings.
 
 ### Environment
 All the results are generated in a virtual environment with the following specifications:
