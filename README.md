@@ -3,7 +3,10 @@ Code for the experiments carried out in the papers:
 "Efficient Network Embedding by Approximate Equitable Partitions" (ICDM 2024) https://ieeexplore.ieee.org/abstract/document/10884294
 "Scalable Network Embedding with Approximate Equitable Partitions" (TKDE 2026) https://ieeexplore.ieee.org/abstract/document/11479895
 
-UPDATE: Added extension for weighted and directed networks.
+UPDATES: 
+
+- Added extension for weighted and directed networks. 
+- Added Notebook Jupiter for computing $\varepsilon$-BE embeddings.
 
 ### Environment
 All the results are generated in a virtual environment with the following specifications:
