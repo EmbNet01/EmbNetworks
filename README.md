@@ -1,5 +1,7 @@
 # BE-embedding
-Code for the experiments carried out in the paper "Efficient Network Embedding by Approximate Equitable Partitions" (Accepted at ICDM 2024) https://arxiv.org/abs/2409.10160
+Code for the experiments carried out in the papers:
+"Efficient Network Embedding by Approximate Equitable Partitions" (ICDM 2024) https://ieeexplore.ieee.org/abstract/document/10884294
+"Scalable Network Embedding with Approximate Equitable Partitions" (TKDE 2026) https://ieeexplore.ieee.org/abstract/document/11479895
 
 UPDATE: Added extension for weighted and directed networks.
 
@@ -105,6 +107,41 @@ python main.py BrazilAir regr
 The command 3 computes the visualization task for the Barbell networks. It is not available for the other networks.
 
 All the results are stored in the results folder.
+
+### Notebook
+We also provide a clean Jupyter notebook, `BE_embedding_notebook.ipynb`, to make the method easier to use
+
+The notebook is intended for users interested in applying the technique described in the paper. It separates the main operations into modular cells:
+- loading and inspecting the adjacency matrix
+- computing the eps-BE partition on networks
+- computing the corresponding embedding
+
+### References
+```bibtex
+@INPROCEEDINGS{10884294,
+  author={Squillace, Giuseppe and Tribastone, Mirco and Tschaikowski, Max and Vandin, Andrea},
+  booktitle={2024 IEEE International Conference on Data Mining (ICDM)}, 
+  title={Efficient Network Embedding by Approximate Equitable Partitions}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={440-449},
+  keywords={Costs;Prototypes;Ordinary differential equations;Approximation algorithms;Polynomials;Iterative algorithms;Partitioning algorithms;Classification algorithms;Data mining;Complex systems;Equitable partitions;network embedding;backward equivalence;structural equivalence},
+  doi={10.1109/ICDM59182.2024.00051}}
+
+@ARTICLE{11479895,
+  author={Squillace, Giuseppe and Tribastone, Mirco and Tschaikowski, Max and Vandin, Andrea},
+  journal={IEEE Transactions on Knowledge and Data Engineering}, 
+  title={Scalable Network Embedding With Approximate Equitable Partitions}, 
+  year={2026},
+  volume={38},
+  number={7},
+  pages={4658-4673},
+  keywords={Graph theory;Machine learning;Network analyzers;Partitioning algorithms;Clustering algorithms;Scalability;Algorithmic efficiency;Role transfer;Backward equivalence;equitable partitions;network embedding;structural equivalence},
+  doi={10.1109/TKDE.2026.3682970}}
+  
+```
+
 
 ##### Contacts
 For any problem, you can send an email to giuseppesquillace92@gmail.com
